@@ -6,15 +6,15 @@ class SearchBar extends Component {
     super(props) // super is parent of object
     // Each class has your own property state.
     // create a new object. Passing a term property
-    this.state = { term: ''}
+    this.state = {term: ''}
   }
 
   render () {
     return (
-      <div>
+      <div className="search-bar">
       <input
       value={this.state.term}
-      onChange ={event => this.setState({ term: event.target.value})}
+      onChange ={event => this.setState({term: event.target.value})}
       />
       Value of the input: {this.state.term}
       </div>

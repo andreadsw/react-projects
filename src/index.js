@@ -8,8 +8,6 @@ import VideoDetail from './components/video_detail'
 
 const API_KEY = 'AIzaSyDFk3YpPU1N2apbYQTknFr4IWXWSuS-gAk'
 
-
-
 // create a new component. This should produce some HTML
 // const nevers change it.
 // Create a class component because we need to use state and more advance react
@@ -19,11 +17,17 @@ class App extends Component {
     super(props)
 
     // initial value. Create an object videos is a key of the object. Create an
-    //array is the value of the object.
-    this.state = { videos: [] }
+    // array is the value of the object.
+    this.state = {
+      videos: [],
+      selectedVideo: null
+    }
     // Demonstrate how the Youtube API works here. Then, term is surfbards to search
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      this.setState({ videos })
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      })
       // this line is the same of  key: value this.setState({ videos: videos})
     })
   }
@@ -31,8 +35,10 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]}/>
-        <VideoList videos= {this.state.videos} />
+        <VideoDetail video={this.state.selectedVideo}/>
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          videos={this.state.videos}/>
       </div>
     )
   }
