@@ -1,7 +1,23 @@
 import React from 'react'
 
-const VideoListitem = (props) => {
-  return <li>video</li>
+const VideoListitem = ({video}) => {
+// const video = props.video. The line above is the same
+// representation VideoListitem = ({video}).
+  const imageUrl = video.snippet.thumbnails.default.url
+                    //this comes from the console header preview when inspects
+  return (
+    <li className="list-group-item">
+    <div className="video-list media">
+      <div className="media-left">
+        <img className="media-object" src={imageUrl} />
+      </div>
+      <div className="media-body">
+        <div className="media-heading">{video.snippet.title}</div>
+      </div>
+    </div>
+
+    </li>
+  )
 }
 
 export default VideoListitem
