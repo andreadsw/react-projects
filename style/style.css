@@ -19,7 +19,7 @@ body {
 }
 
 .video-detail .details {
-  margin-top: 10px;
+  margin-top: 10px 0 20px 0;
   padding: 10px;
   border 1px solid #ddd;
   border-radius: 4px;
@@ -27,6 +27,11 @@ body {
 
 .details {
   background-color: #eee;
+}
+
+.list-group {
+  padding-right: .9375rem;
+  padding-left: .9375rem;
 }
 
 .list-group-item:hover {
