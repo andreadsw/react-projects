@@ -14,14 +14,18 @@ class SearchBar extends Component {
       <div className="search-bar">
       <input
       value={this.state.term}
-      onChange ={event => this.setState({term: event.target.value})}
+      onChange ={event => this.onInputChange(event.target.value)}
       />
-      Value of the input: {this.state.term}
       </div>
     )
     // return <input onChange =(event => this.setState({ term: event.target.value})) />
     // this here is the SearchBar here.
     // onChage is a React event. You can find it inside the react documentation
+  }
+
+  onInputChange(term) {
+    this.setState({term})
+    this.props.onSearchTermChange(term)
   }
 
   // You can eleminate the fuction event

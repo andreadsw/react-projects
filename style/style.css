@@ -1,6 +1,13 @@
+body {
+  font-family: "Benton Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif !important;
+  font-size: 15px !important;
+  color: #45494E !important;
+  letter-spacing: .5px;
+}
+
 .search-bar {
-  margin: 20px;
-  text-align: center;
+  margin: 25px 0 20px 20px;
+  width: 85%;
 }
 
 .search-bar input {
@@ -16,6 +23,10 @@
   padding: 10px;
   border 1px solid #ddd;
   border-radius: 4px;
+}
+
+.details {
+  background-color: #eee;
 }
 
 .list-group-item:hover {
