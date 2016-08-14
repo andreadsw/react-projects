@@ -1,5 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+import { combineReducers } from 'redux'
+import BooksReducer from './reducer_books'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const rootReducer = combineReducers({
+  books: BooksReducer
+})
+
+export default rootReducer
