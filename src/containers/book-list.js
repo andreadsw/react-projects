@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 // this is the link between the react and redux
 import { connect } from 'react-redux'
 
+// Redux serves to construct the application state
+// React provides views to display that state
+// Redux and React is disconnected only from the use of React-Redux clear
+// connection between those twos
+
 class BookList extends Component {
   renderList () {
     return this.props.books.map((book) => {
@@ -33,5 +38,8 @@ function mapStateToProps (state) {
   }
 }
 
-// using connect function
+// Redux generate state object in the container books and map that state as props
+// to our component.
+// State was updated through our reducer our component re-render within our list of books
+// using connect function to mapStateToProps to BookList
 export default connect(mapStateToProps)(BookList)
