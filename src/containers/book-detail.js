@@ -9,6 +9,7 @@ class BookDetail extends Component {
     return (
         <div>
           <h3>Details for:</h3>
+          <img className="img-book" src={this.props.book.image} height="120" width="80" />
           <div>Title: {this.props.book.title}</div>
           <div>Author: {this.props.book.author}</div>
         </div>
